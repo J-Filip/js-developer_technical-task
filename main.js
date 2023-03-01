@@ -1,3 +1,8 @@
+/**
+ * TODO: 
+    * encode URI ?
+*/  
+
 import "./style.css";
 import javascriptLogo from "./javascript.svg";
 
@@ -20,11 +25,13 @@ async function getFeed(endpoint) {
 
   feed.innerHTML = data
     .map(function (el) {
-      return `<video width="320" height="240" poster="${el.video.poster}" controls>
+      return ` <div class= 'video_card' >
+      <video width="320" height="240" poster="${el.video.poster}" controls>
 <source src="${el.video.url}" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-
+<a href="${`https://www.facebook.com/share.php?u=${el.video.url}`}"  target="blank"> <i class="fa fa-facebook"></i> Facebook</a>
+</div>
 `;
     })
     .join("");
@@ -32,7 +39,7 @@ Your browser does not support the video tag.
   // find all videos and attach listeners for play event that toggles fullscreen on event fired.
   let videos = document.querySelectorAll("video");
   videos.forEach((video) => {
-    element.addEventListener("play", (event) => {
+    video.addEventListener("play", (event) => {
       toggleFullscreen(video);
     });
   });
