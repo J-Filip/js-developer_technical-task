@@ -24,12 +24,29 @@ async function getFeed(endpoint) {
 <source src="${el.video.url}" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-<img >
+
 `;
     })
     .join("");
+
+  // find all videos and attach listeners for play event that toggles fullscreen on event fired.
+  let videos = document.querySelectorAll("video");
+  videos.forEach((video) => {
+    element.addEventListener("play", (event) => {
+      toggleFullscreen(video);
+    });
+  });
 }
 
 getFeed(
   "https://private-anon-d48de68883-technicaltaskapi.apiary-mock.com/feed"
 );
+
+// toggle video element in and out of fullscreen.
+function toggleFullscreen(video) {
+  video.requestFullscreen().catch((err) => {
+    alert(
+      `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`
+    );
+  });
+}
