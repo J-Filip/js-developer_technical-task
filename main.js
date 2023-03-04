@@ -1,13 +1,14 @@
 /**
- * TODO: 
-    * encode URI ?
-*/  
+ * TODO:
+ * encode URI
+ * isolate to components: header, feed, feed_card, social_bar
+ */
 
 import "./style.css";
 import javascriptLogo from "./javascript.svg";
 
 document.querySelector("#app").innerHTML = `
-  <div>
+  <div class='header'>
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     <h1>Tehcnical task </h1>
     <div class="about">
@@ -25,12 +26,14 @@ async function getFeed(endpoint) {
 
   feed.innerHTML = data
     .map(function (el) {
-      return ` <div class= 'video_card' >
+      return ` <div class= 'feed_card' >
       <video width="320" height="240" poster="${el.video.poster}" controls>
 <source src="${el.video.url}" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+<div class='social_bar'> 
 <a href="${`https://www.facebook.com/share.php?u=${el.video.url}`}"  target="blank"> <i class="fa fa-facebook"></i> Facebook</a>
+</div> 
 </div>
 `;
     })
