@@ -101,7 +101,7 @@ button:focus-visible {
   justify-content: center;
 }
 
-.video_card{
+.feed_card{
   display: flex;
   flex-direction: column;
 }
