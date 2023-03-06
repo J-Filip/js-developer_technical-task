@@ -56,32 +56,43 @@ Other:
 
 ### Install and build
 
-Install the dependencies
-‘’’
+Install the dependencies:
+
+``
 npm install
+``
 
-Local dev server with HMR
-‘’’
+Local dev server with HMR:
+
+``
 npm run dev
+``
 
-Locally preview production build
-‘’’
+Locally preview production build:
+
+``
 npm run preview
+``
 
-production build
-‘’’
+production build:
+
+``
 npm run build
-
+``
 
 ### Linting and formatting from the cli
 
-Project uses eslint and prettier (demo only to showcase further steps)
+Project uses eslint:
 
-‘’’
+``
 npm run format
+``
 
-‘’’
+and prettier (demo only to showcase further steps):
+
+``
 npm run lint
+``
 
 * if using vscode, you can install extensions for prettier and eslint.
 
@@ -127,4 +138,4 @@ We populate feed cards with videos and every feed card is a link.
 
 If this were my hobby project, I would probably use Astro because it seems fun, I can write js on both sides and add my own choice of ui framework.
 
-If client work, probably express or next.js if something complex.
+If working for a client, probably express or next.js if something complex.
