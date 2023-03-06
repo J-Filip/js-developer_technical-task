@@ -115,6 +115,10 @@ Overall, I chose to write more about my thought process than actually code becau
 
 Possible improvements: 
 
+
+- I would replace vanilla js innerHtml approach and use React (Vue, Svelte...). This approach does not allow reusability or handles changes well because we hardcoded the majority of the values (for excample video attributes or heading value). 
+This is a must for any kind of further developemnt on this project. 
+
 - handle cache. I only used tanstack query ( former react query) and would like to learn more about proper cache handling.
  
 - add placehoders for content loading - useful for slow connection 
